@@ -12,6 +12,11 @@ const kPrimaryGradientColor = LinearGradient(
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Colors.black;
 
+final kDefaultShadow = BoxShadow(
+  blurRadius: 16,
+  color: Colors.black.withOpacity(0.25)
+);
+
 const kAnimationDuration = Duration(milliseconds: 200);
 
 const headingStyle = TextStyle(
@@ -21,7 +26,7 @@ const headingStyle = TextStyle(
   height: 1.5,
 );
 
-const defaultDuration = Duration(milliseconds: 250);
+const defaultDuration = Duration(milliseconds: 125);
 
 // Form Error
 final RegExp emailValidatorRegExp =

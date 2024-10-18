@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
-import '../models/Product.dart';
+import '../models/product.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
     Key? key,
     this.width = 140,
-    this.aspectRetio = 1.02,
+    this.aspectRetio = 4 / 3,
     required this.product,
     required this.onPress,
   }) : super(key: key);
@@ -27,7 +27,7 @@ class ProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AspectRatio(
-              aspectRatio: 1.02,
+              aspectRatio: aspectRetio,
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(

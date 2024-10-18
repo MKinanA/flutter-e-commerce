@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/init_screen.dart';
 
 class LoginSuccessScreen extends StatelessWidget {
   static String routeName = "/login_success";
@@ -8,6 +9,7 @@ class LoginSuccessScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text("Login Success"),
       ),
       body: Column(
@@ -15,7 +17,7 @@ class LoginSuccessScreen extends StatelessWidget {
           const SizedBox(height: 16),
           Image.asset(
             "assets/images/success.png",
-            height: MediaQuery.of(context).size.height * 0.4, //40%
+            width: MediaQuery.of(context).size.width
           ),
           const SizedBox(height: 16),
           const Text(
@@ -31,7 +33,7 @@ class LoginSuccessScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ElevatedButton(
               onPressed: () {
-                // Navigator.pushNamedAndRemoveUntil(context, InitScreen.routeName, (route) => false);
+                Navigator.pushNamedAndRemoveUntil(context, InitScreen.routeName, (route) => false);
               },
               child: const Text("Back to home"),
             ),

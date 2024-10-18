@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
+import '../../otp/otp_screen.dart';
 
 class CompleteProfileForm extends StatefulWidget {
   const CompleteProfileForm({super.key});
 
   @override
-  _CompleteProfileFormState createState() => _CompleteProfileFormState();
+  State<CompleteProfileForm> createState() => _CompleteProfileFormState();
 }
 
 class _CompleteProfileFormState extends State<CompleteProfileForm> {
@@ -44,6 +45,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           TextFormField(
             onSaved: (newValue) => firstName = newValue,
             onChanged: (value) {
+              firstName = value;
               if (value.isNotEmpty) {
                 removeError(error: kNamelNullError);
               }
@@ -68,6 +70,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           const SizedBox(height: 20),
           TextFormField(
             onSaved: (newValue) => lastName = newValue,
+            onChanged: (value) => lastName = value,
             decoration: const InputDecoration(
               labelText: "Last Name",
               hintText: "Enter your last name",
@@ -79,9 +82,10 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           ),
           const SizedBox(height: 20),
           TextFormField(
-            keyboardType: TextInputType.phone,
+            keyboardType: TextInputType.number,
             onSaved: (newValue) => phoneNumber = newValue,
             onChanged: (value) {
+              phoneNumber = value;
               if (value.isNotEmpty) {
                 removeError(error: kPhoneNumberNullError);
               }
@@ -107,6 +111,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           TextFormField(
             onSaved: (newValue) => address = newValue,
             onChanged: (value) {
+              address = value;
               if (value.isNotEmpty) {
                 removeError(error: kAddressNullError);
               }
@@ -134,7 +139,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                // Navigator.pushNamed(context, OtpScreen.routeName);
+                Navigator.pushNamed(context, OtpScreen.routeName);
               }
             },
             child: const Text("Continue"),
