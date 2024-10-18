@@ -1,7 +1,7 @@
 <img src="assets/screenshots/flyer.png" style="width:100%;"/>
 <div style="height:0.5rem;"></div>
 <div style="display:flex;flex-direction:row;justify-content:stretch;align-items:start;gap:1rem;">
-    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
+    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0;">
         <p style="line-height:1;margin:0;">Home Screen</p>
         <img src="assets/screenshots/init_screen-home_screen.png" style="width:16rem;"/>
     </div>
