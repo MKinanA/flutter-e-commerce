@@ -1,2 +1,3 @@
-![](flyer.png)
+<img src="assets/screenshots/flyer.png" style="width:100%;"/>
+<div style="display:flex;flex-direction:row;justify-content:stretch;align-items:start;gap:1rem;"><img src="assets/screenshots/init_screen-home_screen.png" style="width:100%;"/><img src="assets/screenshots/products_screen.png" style="width:100%;"/><img src="assets/screenshots/details_screen.png" style="width:100%;"/><img src="assets/screenshots/cart_screen.png" style="width:100%;"/><img src="assets/screenshots/profile_screen.png" style="width:100%;"/></div>
 <details><summary></summary>Credits to <a href="https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933">this cool repo</a> for everything</details>
