@@ -1,7 +1,7 @@
 <img src="assets/screenshots/flyer.png" style="width:100%;"/>
 <div style="height:0.5rem;"></div>
 <div style="display:flex;flex-direction:row;justify-content:stretch;align-items:start;gap:1rem;">
-    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0;">
+    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
         <p style="line-height:1;margin:0;">Home Screen</p>
         <img src="assets/screenshots/init_screen-home_screen.png" style="width:16rem;"/>
     </div>
@@ -22,4 +22,6 @@
         <img src="assets/screenshots/profile_screen.png" style="width:16rem;"/>
     </div>
 </div>
-<details><summary></summary>Credits to <a href="https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933">this cool repo</a> for everything</details>
+<br>
+
+Forked (or cloned) from [E-commerce-Complete-Flutter-UI](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933) by [abuanwar072](https://github.com/abuanwar072)
