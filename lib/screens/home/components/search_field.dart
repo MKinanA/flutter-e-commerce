@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
 class SearchField extends StatelessWidget {
+  final Function(String)? onChanged;
+
   const SearchField({
     Key? key,
+    this.onChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Form(
       child: TextFormField(
-        onChanged: (value) {},
+        onChanged: onChanged,
         decoration: InputDecoration(
           filled: true,
           fillColor: kSecondaryColor.withOpacity(0.1),

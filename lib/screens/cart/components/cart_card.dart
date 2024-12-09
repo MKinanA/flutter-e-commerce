@@ -7,9 +7,11 @@ class CartCard extends StatelessWidget {
   const CartCard({
     Key? key,
     required this.cart,
+    this.showNumOfItem = true,
   }) : super(key: key);
 
   final Cart cart;
+  final bool showNumOfItem;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class CartCard extends StatelessWidget {
             children: [
               Text(
                 cart.product.title,
-                style: const TextStyle(color: Colors.black, fontSize: 16),
+                style: const TextStyle(fontSize: 16),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis
               ),
@@ -47,7 +49,7 @@ class CartCard extends StatelessWidget {
                   style: const TextStyle(
                       fontWeight: FontWeight.w600, color: kPrimaryColor),
                   children: [
-                    TextSpan(
+                    if (showNumOfItem) TextSpan(
                         text: " x${cart.numOfItem}",
                         style: Theme.of(context).textTheme.bodyLarge),
                   ],

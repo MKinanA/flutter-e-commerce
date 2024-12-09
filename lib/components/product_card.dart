@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import '../constants.dart';
 import '../models/product.dart';
+import '../state_managements/favorite_provider.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -56,13 +58,15 @@ class ProductCard extends StatelessWidget {
                 ),
                 InkWell(
                   borderRadius: BorderRadius.circular(50),
-                  onTap: () {},
+                  onTap: () => context.read<FavoriteProvider>().items.contains(product)
+                  ? context.read<FavoriteProvider>().removeItem(product)
+                  : context.read<FavoriteProvider>().addItem(product),
                   child: Container(
                     padding: const EdgeInsets.all(6),
                     height: 24,
                     width: 24,
                     decoration: BoxDecoration(
-                      color: product.isFavourite
+                      color: context.watch<FavoriteProvider>().items.contains(product)
                           ? kPrimaryColor.withOpacity(0.15)
                           : kSecondaryColor.withOpacity(0.1),
                       shape: BoxShape.circle,
@@ -70,9 +74,9 @@ class ProductCard extends StatelessWidget {
                     child: SvgPicture.asset(
                       "assets/icons/Heart Icon_2.svg",
                       colorFilter: ColorFilter.mode(
-                          product.isFavourite
+                          context.watch<FavoriteProvider>().items.contains(product)
                               ? const Color(0xFFFF4848)
-                              : const Color(0xFFDBDEE4),
+                              : const Color.fromARGB(255, 118, 119, 121).withOpacity(0.25),
                           BlendMode.srcIn),
                     ),
                   ),

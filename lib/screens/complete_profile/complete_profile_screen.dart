@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../constants.dart';
 import 'components/complete_profile_form.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
@@ -22,12 +20,19 @@ class CompleteProfileScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 16),
-                  const Text("Complete Profile", style: headingStyle),
+                  const Text(
+                    "Complete Profile",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
                   const Text(
                     "Complete your details or continue  \nwith social media",
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 24),
                   const CompleteProfileForm(),
                   const SizedBox(height: 30),
                   Text(

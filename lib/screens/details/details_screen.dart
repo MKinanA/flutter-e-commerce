@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/constants.dart';
-import 'package:shop_app/models/cart.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
-
+import 'package:shop_app/state_managements/cart_provider.dart';
 import '../../models/product.dart';
 import 'components/color_dots.dart';
 import 'components/product_description.dart';
@@ -24,7 +24,6 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
-      backgroundColor: const Color(0xFFF5F6F9),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -81,14 +80,14 @@ class DetailsScreen extends StatelessWidget {
         children: [
           ProductImages(product: product),
           TopRoundedContainer(
-            color: Colors.white,
+            color: Theme.of(context).brightness == Brightness.dark ? Colors.transparent : Colors.white,
             child: Column(
               children: [
                 ProductDescription(
                   product: product,
                 ),
                 TopRoundedContainer(
-                  color: const Color(0xFFF6F7F9),
+                  color: Colors.transparent,
                   child: Column(
                     children: [
                       ColorDots(
@@ -105,27 +104,17 @@ class DetailsScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: TopRoundedContainer(
-        color: Colors.white,
+        color: Theme.of(context).brightness == Brightness.dark ? Colors.black : Colors.white,
         shadows: [kDefaultShadow],
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             child: ElevatedButton(
               onPressed: () {
-                bool productExistsInCart = false;
-                int productIndexInCart = 0;
-                for (Cart cart in demoCarts) {
-                  if (cart.product == product) {
-                    productExistsInCart = true;
-                    break;
-                  }
-                  productIndexInCart ++;
-                }
-                if (productExistsInCart) {
-                  demoCarts[productIndexInCart].numOfItem += itemCount.count;
-                } else {
-                  demoCarts.add(Cart(product: product, numOfItem: itemCount.count));
-                }
+                context.read<CartProvider>().addProduct(
+                  product,
+                  quantity: itemCount.count
+                );
                 Navigator.pushNamed(context, CartScreen.routeName);
               },
               child: const Text("Add To Cart"),

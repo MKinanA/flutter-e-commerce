@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../constants.dart';
-
 import 'components/otp_form.dart';
 
 class OtpScreen extends StatelessWidget {
@@ -24,8 +21,12 @@ class OtpScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Text(
                   "OTP Verification",
-                  style: headingStyle,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+                const SizedBox(height: 8),
                 const Text("We sent your code to +* *** *** ***"),
                 TweenAnimationBuilder(
                   tween: Tween(begin: 60.0, end: 0.0),

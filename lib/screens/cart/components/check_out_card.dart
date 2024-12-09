@@ -20,7 +20,7 @@ class CheckoutCard extends StatelessWidget {
       ),
       // height: 174,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).brightness == Brightness.dark ? Colors.black : Colors.white,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
@@ -57,7 +57,6 @@ class CheckoutCard extends StatelessWidget {
                 const Icon(
                   Icons.arrow_forward_ios,
                   size: 12,
-                  color: kTextColor,
                 )
               ],
             ),
@@ -71,7 +70,7 @@ class CheckoutCard extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: "\$${total.toStringAsFixed(2)}",
-                          style: const TextStyle(fontSize: 16, color: Colors.black),
+                          style: const TextStyle(fontSize: 16),
                         ),
                       ],
                     ),

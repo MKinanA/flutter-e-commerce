@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
+import 'package:shop_app/state_managements/favorite_provider.dart';
 
 import '../../../constants.dart';
 import '../../../models/product.dart';
@@ -27,26 +29,31 @@ class ProductDescription extends StatelessWidget {
         ),
         Align(
           alignment: Alignment.centerRight,
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            width: 48,
-            decoration: BoxDecoration(
-              color: product.isFavourite
-                  ? const Color(0xFFFFE6E6)
-                  : const Color(0xFFF5F6F9),
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(20),
-                bottomLeft: Radius.circular(20),
+          child: InkWell(
+            onTap: () => context.read<FavoriteProvider>().items.contains(product)
+            ? context.read<FavoriteProvider>().removeItem(product)
+            : context.read<FavoriteProvider>().addItem(product),
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              width: 48,
+              decoration: BoxDecoration(
+                color: context.watch<FavoriteProvider>().items.contains(product)
+                    ? const Color(0xFFFFE6E6)
+                    : const Color(0xFFF5F6F9),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
               ),
-            ),
-            child: SvgPicture.asset(
-              "assets/icons/Heart Icon_2.svg",
-              colorFilter: ColorFilter.mode(
-                  product.isFavourite
-                      ? const Color(0xFFFF4848)
-                      : const Color(0xFFDBDEE4),
-                  BlendMode.srcIn),
-              height: 16,
+              child: SvgPicture.asset(
+                "assets/icons/Heart Icon_2.svg",
+                colorFilter: ColorFilter.mode(
+                    context.watch<FavoriteProvider>().items.contains(product)
+                        ? const Color(0xFFFF4848)
+                        : const Color(0xFFDBDEE4),
+                    BlendMode.srcIn),
+                height: 16,
+              ),
             ),
           ),
         ),

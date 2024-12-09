@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:shop_app/state_managements/auth.dart';
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
@@ -52,7 +53,7 @@ class _SignFormState extends State<SignForm> {
               } else if (emailValidatorRegExp.hasMatch(value)) {
                 removeError(error: kInvalidEmailError);
               }
-              return;
+              email = value;
             },
             validator: (value) {
               if (value!.isEmpty) {
@@ -83,7 +84,7 @@ class _SignFormState extends State<SignForm> {
               } else if (value.length >= 8) {
                 removeError(error: kShortPassError);
               }
-              return;
+              password = value;
             },
             validator: (value) {
               if (value!.isEmpty) {
@@ -134,6 +135,7 @@ class _SignFormState extends State<SignForm> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                context.read<Auth>().setEmail(email);
                 // if all are valid then go to success screen
                 KeyboardUtil.hideKeyboard(context);
                 Navigator.pushNamed(context, LoginSuccessScreen.routeName);

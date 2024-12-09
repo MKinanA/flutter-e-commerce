@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../../components/socal_card.dart';
-import '../../constants.dart';
 import 'components/sign_up_form.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -23,12 +21,19 @@ class SignUpScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 16),
-                  const Text("Register Account", style: headingStyle),
+                  const Text(
+                    "Register Account",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
                   const Text(
                     "Complete your details or continue \nwith social media",
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 24),
                   const SignUpForm(),
                   const SizedBox(height: 16),
                   Row(

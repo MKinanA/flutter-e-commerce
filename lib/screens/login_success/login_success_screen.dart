@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/screens/init_screen.dart';
+import 'package:shop_app/state_managements/auth.dart';
 
 class LoginSuccessScreen extends StatelessWidget {
   static String routeName = "/login_success";
@@ -25,7 +29,6 @@ class LoginSuccessScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
             ),
           ),
           const Spacer(),
@@ -33,7 +36,15 @@ class LoginSuccessScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(context, InitScreen.routeName, (route) => false);
+                (() async {
+                  await context.read<Auth>().setIsLoggedIn(true);
+                  log('Auth state was updated${context.mounted ? ' to ${context.read<Auth>().isLoggedIn}' : ''}');
+                })();
+                if (context.mounted) {
+                  Navigator.pushNamedAndRemoveUntil(context, InitScreen.routeName, (route) => false);
+                } else {
+                  log('error');
+                }
               },
               child: const Text("Back to home"),
             ),

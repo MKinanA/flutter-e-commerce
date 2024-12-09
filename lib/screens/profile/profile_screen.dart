@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
-
+import 'package:shop_app/state_managements/auth.dart';
+import '../../state_managements/theme.dart';
 import 'components/profile_menu.dart';
 import 'components/profile_pic.dart';
 
@@ -13,13 +15,27 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Profile"),
+        actions: [
+          IconButton(
+            onPressed: () async => await context.read<DarkMode>().toggle(),
+            icon: Icon(context.watch<DarkMode>().isEnabled ? Icons.light_mode : Icons.dark_mode),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Column(
           children: [
             const ProfilePic(),
-            const SizedBox(height: 20),
+            const SizedBox(height: 8),
+            Text(
+              context.watch<Auth>().email ?? 'Null',
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(height: 16),
             ProfileMenu(
               text: "My Account",
               icon: "assets/icons/User Icon.svg",
@@ -44,6 +60,8 @@ class ProfileScreen extends StatelessWidget {
               text: "Log Out",
               icon: "assets/icons/Log out.svg",
               press: () {
+                context.read<Auth>().setIsLoggedIn(false);
+                context.read<Auth>().setEmail(null);
                 Navigator.pushNamedAndRemoveUntil(context, SignInScreen.routeName, (route) => false);
               },
             ),
