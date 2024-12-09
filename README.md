@@ -2,24 +2,32 @@
 <div style="height:0.5rem;"></div>
 <div style="display:flex;flex-direction:row;justify-content:stretch;align-items:start;gap:1rem;">
     <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
+        <p style="line-height:1;margin:0;">Splash Screen</p>
+        <img src="assets/screenshots/1.png" style="width:16rem;"/>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
         <p style="line-height:1;margin:0;">Home Screen</p>
-        <img src="assets/screenshots/init_screen-home_screen.png" style="width:16rem;"/>
-    </div>
-    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
-        <p style="line-height:1;margin:0;">Products Screen</p>
-        <img src="assets/screenshots/products_screen.png" style="width:16rem;"/>
-    </div>
-    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
-        <p style="line-height:1;margin:0;">Details Screen</p>
-        <img src="assets/screenshots/details_screen.png" style="width:16rem;"/>
-    </div>
-    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
-        <p style="line-height:1;margin:0;">Cart Screen</p>
-        <img src="assets/screenshots/cart_screen.png" style="width:16rem;"/>
+        <img src="assets/screenshots/2.png" style="width:16rem;"/>
     </div>
     <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
         <p style="line-height:1;margin:0;">Profile Screen</p>
-        <img src="assets/screenshots/profile_screen.png" style="width:16rem;"/>
+        <img src="assets/screenshots/3.png" style="width:16rem;"/>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
+        <p style="line-height:1;margin:0;">Products Screen</p>
+        <img src="assets/screenshots/4.png" style="width:16rem;"/>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
+        <p style="line-height:1;margin:0;">Details Screen</p>
+        <img src="assets/screenshots/5.png" style="width:16rem;"/>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
+        <p style="line-height:1;margin:0;">Cart Screen</p>
+        <img src="assets/screenshots/6.png" style="width:16rem;"/>
+    </div>
+    <div style="display:flex;flex-direction:column;justify-content:end;align-items:center;gap:0.5rem;">
+        <p style="line-height:1;margin:0;">Dark Mode</p>
+        <img src="assets/screenshots/7.png" style="width:16rem;"/>
     </div>
 </div>
 <br>
