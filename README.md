@@ -32,4 +32,4 @@
 </div>
 <br>
 
-Forked (or cloned) from [E-commerce-Complete-Flutter-UI](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933) by [abuanwar072](https://github.com/abuanwar072)
+Forked (or cloned) from [E-commerce-Complete-Flutter-UI](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933) ([commit cb439a3](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933)) by [abuanwar072](https://github.com/abuanwar072)
