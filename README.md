@@ -1,3 +1,7 @@
+Cloned from [E-commerce-Complete-Flutter-UI](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933) ([commit cb439a3](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933)) by [abuanwar072](https://github.com/abuanwar072)
+***
+
+<br>
 <img src="assets/screenshots/flyer.png" style="width:100%;"/>
 <div style="height:0.5rem;"></div>
 <div style="display:flex;flex-direction:row;justify-content:stretch;align-items:start;gap:1rem;">
@@ -30,6 +34,3 @@
         <img src="assets/screenshots/7.png" style="width:16rem;"/>
     </div>
 </div>
-<br>
-
-Forked (or cloned) from [E-commerce-Complete-Flutter-UI](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933) ([commit cb439a3](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/cb439a3e6712a6149e532aa077ab2aa48a613933)) by [abuanwar072](https://github.com/abuanwar072)
